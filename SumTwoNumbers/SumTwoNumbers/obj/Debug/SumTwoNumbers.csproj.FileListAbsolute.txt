@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\bin\Debug\SumTwoNumbers.exe.config
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\bin\Debug\SumTwoNumbers.exe
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\bin\Debug\SumTwoNumbers.pdb
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\obj\Debug\SumTwoNumbers.csproj.AssemblyReference.cache
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\obj\Debug\SumTwoNumbers.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\obj\Debug\SumTwoNumbers.exe
+C:\Users\ISAAC\source\repos\SumTwoNumbers\SumTwoNumbers\obj\Debug\SumTwoNumbers.pdb
