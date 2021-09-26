@@ -1,0 +1,6 @@
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\bin\Debug\ThreeQuizzesAverage.exe.config
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\bin\Debug\ThreeQuizzesAverage.exe
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\bin\Debug\ThreeQuizzesAverage.pdb
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\obj\Debug\ThreeQuizzesAverage.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\obj\Debug\ThreeQuizzesAverage.exe
+C:\Users\ISAAC\source\repos\ThreeQuizzesAverage\ThreeQuizzesAverage\obj\Debug\ThreeQuizzesAverage.pdb
