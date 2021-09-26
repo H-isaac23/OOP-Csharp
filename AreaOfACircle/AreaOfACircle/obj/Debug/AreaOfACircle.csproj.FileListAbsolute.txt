@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\bin\Debug\AreaOfACircle.exe.config
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\bin\Debug\AreaOfACircle.exe
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\bin\Debug\AreaOfACircle.pdb
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\obj\Debug\AreaOfACircle.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\obj\Debug\AreaOfACircle.exe
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\obj\Debug\AreaOfACircle.pdb
+C:\Users\ISAAC\source\repos\AreaOfACircle\AreaOfACircle\obj\Debug\AreaOfACircle.csproj.AssemblyReference.cache
