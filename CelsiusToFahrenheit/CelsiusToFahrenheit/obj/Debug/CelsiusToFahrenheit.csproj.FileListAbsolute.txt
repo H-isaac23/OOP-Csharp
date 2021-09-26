@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\bin\Debug\CelsiusToFahrenheit.exe.config
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\bin\Debug\CelsiusToFahrenheit.exe
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\bin\Debug\CelsiusToFahrenheit.pdb
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\obj\Debug\CelsiusToFahrenheit.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\obj\Debug\CelsiusToFahrenheit.exe
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\obj\Debug\CelsiusToFahrenheit.pdb
+C:\Users\ISAAC\source\repos\CelsiusToFahrenheit\CelsiusToFahrenheit\obj\Debug\CelsiusToFahrenheit.csproj.AssemblyReference.cache
