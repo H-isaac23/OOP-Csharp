@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\bin\Debug\QualifiedVoter.exe.config
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\bin\Debug\QualifiedVoter.exe
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\bin\Debug\QualifiedVoter.pdb
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\obj\Debug\QualifiedVoter.csproj.AssemblyReference.cache
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\obj\Debug\QualifiedVoter.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\obj\Debug\QualifiedVoter.exe
+C:\Users\ISAAC\source\repos\QualifiedVoter\QualifiedVoter\obj\Debug\QualifiedVoter.pdb
