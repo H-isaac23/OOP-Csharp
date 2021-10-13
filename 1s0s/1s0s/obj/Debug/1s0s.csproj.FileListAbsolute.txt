@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\1s0s\1s0s\bin\Debug\1s0s.exe.config
+C:\Users\ISAAC\source\repos\1s0s\1s0s\bin\Debug\1s0s.exe
+C:\Users\ISAAC\source\repos\1s0s\1s0s\bin\Debug\1s0s.pdb
+C:\Users\ISAAC\source\repos\1s0s\1s0s\obj\Debug\1s0s.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\1s0s\1s0s\obj\Debug\1s0s.exe
+C:\Users\ISAAC\source\repos\1s0s\1s0s\obj\Debug\1s0s.pdb
+C:\Users\ISAAC\source\repos\1s0s\1s0s\obj\Debug\1s0s.csproj.AssemblyReference.cache
