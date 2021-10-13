@@ -1,0 +1,6 @@
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\bin\Debug\ShowCompositeRecursive.exe.config
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\bin\Debug\ShowCompositeRecursive.exe
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\bin\Debug\ShowCompositeRecursive.pdb
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\obj\Debug\ShowCompositeRecursive.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\obj\Debug\ShowCompositeRecursive.exe
+C:\Users\ISAAC\source\repos\ShowCompositeRecursive\ShowCompositeRecursive\obj\Debug\ShowCompositeRecursive.pdb
