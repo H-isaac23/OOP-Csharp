@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\bin\Debug\PrimeSumRecursive.exe.config
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\bin\Debug\PrimeSumRecursive.exe
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\bin\Debug\PrimeSumRecursive.pdb
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\obj\Debug\PrimeSumRecursive.csproj.AssemblyReference.cache
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\obj\Debug\PrimeSumRecursive.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\obj\Debug\PrimeSumRecursive.exe
+C:\Users\ISAAC\source\repos\PrimeSumRecursive\PrimeSumRecursive\obj\Debug\PrimeSumRecursive.pdb
