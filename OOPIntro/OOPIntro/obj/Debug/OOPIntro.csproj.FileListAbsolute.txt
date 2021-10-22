@@ -1,0 +1,7 @@
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\bin\Debug\OOPIntro.exe.config
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\bin\Debug\OOPIntro.exe
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\bin\Debug\OOPIntro.pdb
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\obj\Debug\OOPIntro.csproj.AssemblyReference.cache
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\obj\Debug\OOPIntro.csproj.CoreCompileInputs.cache
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\obj\Debug\OOPIntro.exe
+C:\Users\ISAAC\source\repos\OOPIntro\OOPIntro\obj\Debug\OOPIntro.pdb
