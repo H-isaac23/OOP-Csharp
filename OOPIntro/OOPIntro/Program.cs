@@ -11,15 +11,46 @@ namespace OOPIntro
         static void Main(string[] args)
         {
             Creature c1 = new Creature();
-            c1.hop();
-            c1.speak();
-            c1.speak();
-            c1.speak();
-            c1.speak();
-            c1.walk();
-            c1.walk();
-            Console.WriteLine(c1.distance);
-            Console.WriteLine(c1.NumberOfWordsSpoken);
+            Console.WriteLine("Options:");
+            Console.WriteLine("[1] Walk");
+            Console.WriteLine("[2] Speak");
+            Console.WriteLine("[3] Hop");
+            Console.WriteLine("[4] Show Distance");
+            Console.WriteLine("[5] Show number of Words Spoken");
+
+            int choice;
+            bool done = false;
+
+            while (!done)
+            {
+                Console.Write("Select an action(1-5): ");
+                choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        c1.walk();
+                        break;
+                    case 2:
+                        c1.speak();
+                        break;
+                    case 3:
+                        c1.hop();
+                        break;
+                    case 4:
+                        Console.WriteLine("Distance: " + c1.distance);
+                        break;
+                    case 5:
+                        Console.WriteLine("Number of words spoken: " + c1.NumberOfWordsSpoken);
+                        break;
+                    default:
+                        Console.WriteLine("Exiting program for not choosing anything from 1 to 5.");
+                        done = !done;
+                        break;
+                }
+                Console.WriteLine();
+                
+            }
+
             Console.ReadLine();
 
         }
@@ -37,7 +68,7 @@ namespace OOPIntro
         {
             get
             {
-                return numberOfWalks + numberofHops;
+                return numberOfWalks + (numberofHops*2);
             }
         }
 
