@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace OOPIntro
 {
     class Program
@@ -17,10 +16,8 @@ namespace OOPIntro
             Console.WriteLine("[3] Hop");
             Console.WriteLine("[4] Show Distance");
             Console.WriteLine("[5] Show number of Words Spoken");
-
             int choice;
-            bool done = false;
-
+        bool done = false;
             while (!done)
             {
                 Console.Write("Select an action(1-5): ");
@@ -48,54 +45,44 @@ namespace OOPIntro
                         break;
                 }
                 Console.WriteLine();
-                
             }
-
             Console.ReadLine();
-
         }
     }
-
     class Creature
     {
         private int numberOfWalks = 0;
         private int numberofHops = 0;
         private int numberOfWordsSpoken = 0;
         private Random rand = new Random();
-
         private string[] texts = { "How are you", "It is a lovely day. Isn't it?", "It's a pleasure to meet you.", "Hello", "A pleasant morning to you." };
         public int distance
         {
             get
             {
-                return numberOfWalks + (numberofHops*2);
+                return numberOfWalks + (numberofHops * 2);
             }
         }
-
         public int NumberOfWordsSpoken
         {
-            get
+        get
             {
                 return numberOfWordsSpoken;
             }
         }
-
         public void walk()
         {
             Console.WriteLine("walking");
             numberOfWalks += 1;
         }
-
         public void hop()
         {
             Console.WriteLine("hop");
             numberofHops += 1;
         }
-
         public void speak()
         {
             int randomIndex = rand.Next(5);
-
             switch (randomIndex)
             {
                 case 0:
@@ -116,9 +103,7 @@ namespace OOPIntro
                 default:
                     break;
             }
-
             Console.WriteLine(texts[randomIndex]);
         }
-
     }
 }
