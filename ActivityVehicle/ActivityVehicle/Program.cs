@@ -63,6 +63,8 @@ namespace ActivityVehicle
         protected String current_direction = "North";
         protected double distance_travelled = 0;
         protected double total_displacement = 0;
+
+        // for calculating the displacement
         private double north_distance = 0;
         private double south_distance = 0;
         private double east_distance = 0;
