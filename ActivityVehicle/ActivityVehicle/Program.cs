@@ -5,20 +5,528 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ActivityVehicle
+
+    /*
+     I made it so that there will be exceptions thrown if there are logical errors.
+     This will stop the program completely to throw the exception if needed.
+     Example:
+     -driving a vehicle without starting the engine first
+
+    P.S. The program is over a thousand lines, done over the course of 3 days. Sorry if it's a little bit too much 人(_ _*)
+     */
+
+    /*
+     Author: John Isaac Delgado
+     */
 {
     class Program
     {
         static void Main(string[] args)
         {
-            TwoWheeledVehicle test = new TwoWheeledVehicle();
-            Console.WriteLine(test.Color);
-            test.startEngine();
-            test.EngineType = "Automatic";
-            while (true)
+            bool continue_loop = true;
+            Console.WriteLine("Welcome to Vehicle Tryouts!");
+            
+            int choice;
+
+            while (continue_loop)
             {
-                test.drive();
+                Console.WriteLine("What vehicle would you like to try out?");
+                Console.WriteLine("[1] Two Wheeled Vehicle");
+                Console.WriteLine("[2] Four Wheeled Vehicle");
+                Console.WriteLine("[3] Submarine");
+                Console.WriteLine("[4] Yacht");
+                Console.WriteLine("[5] Helicopter");
+                Console.WriteLine("[6] Airline");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Select a number: ");
+
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        TWV();
+                        break;
+                    case 2:
+                        FWV();
+                        break;
+                    case 3:
+                        Submarine();
+                        break;
+                    case 4:
+                        Yacht();
+                        break;
+                    case 5:
+                        Helicopter();
+                        break;
+                    case 6:
+                        Airlines();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
             }
+
+            Console.WriteLine("Thanks for using the program! Until next time.");
             Console.ReadLine();
+        }
+
+        static void TWV()
+        {
+            bool continue_loop = true;
+
+            TwoWheeledVehicle v;
+            Console.WriteLine("\nYou've chosen a two-wheeled vehicle!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if(choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if(choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("What's the engine type? Manual or Automatic? ");
+                string engine_type = Console.ReadLine();
+                Console.WriteLine("Configuring vehicle...");
+                v = new TwoWheeledVehicle(color, price, engine_type);
+            }
+            else
+            {
+                v = new TwoWheeledVehicle();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specifications");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
+        }
+
+        static void FWV()
+        {
+            bool continue_loop = true;
+
+            FourWheeledVehicle v;
+            Console.WriteLine("\nYou've chosen a four-wheeled vehicle!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if (choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("What's the engine type? Manual or Automatic? ");
+                string engine_type = Console.ReadLine();
+                Console.WriteLine("Configuring vehicle...");
+                v = new FourWheeledVehicle(color, price, engine_type);
+            }
+            else
+            {
+                v = new FourWheeledVehicle();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specification");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
+        }
+
+        static void Submarine()
+        {
+            bool continue_loop = true;
+
+            Submarine v;
+            Console.WriteLine("\nYou've chosen a Submarine!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if (choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("Configuring vehicle...");
+                v = new Submarine(color, price);
+            }
+            else
+            {
+                v = new Submarine();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specification");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
+        }
+
+        static void Yacht()
+        {
+            bool continue_loop = true;
+
+            Yacht v;
+            Console.WriteLine("\nYou've chosen a Yacht!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if (choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("Configuring vehicle...");
+                v = new Yacht(color, price);
+            }
+            else
+            {
+                v = new Yacht();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specification");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
+        }
+
+        static void Helicopter()
+        {
+            bool continue_loop = true;
+
+            Helicopter v;
+            Console.WriteLine("\nYou've chosen a Helicopter!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if (choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("Configuring vehicle...");
+                v = new Helicopter(color, price);
+            }
+            else
+            {
+                v = new Helicopter();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specification");
+                Console.WriteLine("[6] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
+        }
+
+        static void Airlines()
+        {
+            bool continue_loop = true;
+
+            Airlines v;
+            Console.WriteLine("\nYou've chosen an Airline!");
+            Console.WriteLine("Would you like to go with the default configuration or make your own?");
+            Console.Write("[1] Yes [2] No. Select a number: ");
+            int choice = int.Parse(Console.ReadLine());
+            if (choice != 1 && choice != 2)
+            {
+                Console.WriteLine("Input not in choices. Stopping the configuration...\n");
+                return;
+            }
+            if (choice == 1)
+            {
+                Console.Write("\nWhat's the color of the vehicle? ");
+                string color = Console.ReadLine();
+                Console.Write("What's your price for the vehicle? ");
+                int price = int.Parse(Console.ReadLine());
+                Console.WriteLine("Configuring vehicle...");
+                v = new Airlines(color, price);
+            }
+            else
+            {
+                v = new Airlines();
+            }
+
+            int option;
+            while (continue_loop)
+            {
+                Console.WriteLine("\nWhat would you like to do with the vehicle? ");
+                Console.WriteLine("[1] Start engine");
+                Console.WriteLine("[2] Stop engine");
+                Console.WriteLine("[3] Drive");
+                Console.WriteLine("[4] Refuel");
+                Console.WriteLine("[5] Add passenger");
+                Console.WriteLine("[6] Print Vehicle Specification");
+                Console.WriteLine("[7] Quit");
+                Console.Write("Choose a number: ");
+
+                option = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (option)
+                {
+                    case 1:
+                        v.startEngine();
+                        break;
+                    case 2:
+                        v.stopEngine();
+                        break;
+                    case 3:
+                        v.drive();
+                        break;
+                    case 4:
+                        v.refuel();
+                        break;
+                    case 5:
+                        v.addPassenger();
+                        break;
+                    case 6:
+                        v.printSpecs();
+                        break;
+                    case 7:
+                        continue_loop = false;
+                        break;
+                    default:
+                        Console.WriteLine("Input not in choices. Retrying... \n");
+                        break;
+                }
+            }
+
+            Console.WriteLine("Thank you for trying out this vehicle! \n");
         }
     }
 
@@ -52,7 +560,7 @@ namespace ActivityVehicle
         }
         public abstract void startEngine();
         public abstract void stopEngine();
-        public abstract void refuel(int fuelInLiters);
+        public abstract void refuel();
     }
 
     class WheeledVehicle : Vehicle
@@ -130,35 +638,51 @@ namespace ActivityVehicle
 
         public override void startEngine()
         {
-            if(isEngineOn == true)
+            if (isEngineOn == true)
             {
                 Console.WriteLine("Engine is already on");
                 return;
             }
+            Console.WriteLine("Engine started.");
             isEngineOn = true;
             number_person_riding += 1;
         }
 
         public override void stopEngine()
         {
+            if(isEngineOn == false)
+            {
+                Console.WriteLine("Engine is already off.");
+                return;
+            }
+            Console.WriteLine("Engine stopped.");
             isEngineOn = false;
             number_person_riding = 0;
         }
 
-        public override void refuel(int fuel_in_liters)
+        public override void refuel()
         {
+            /*
+             * Refuel assumes that you are at a gas refueling station already.
+             */
             if (!(tank_capacity > 0))
             {
                 throw new Exception("Please initialize the capacity of the tank before refueling");
             }
-
-            if (current_fuel_liters + fuel_in_liters > tank_capacity)
+            if(isEngineOn == true)
+            {
+                Console.WriteLine("Please turn off engine first");
+                return;
+            }
+            Console.Write("Please say how much fuel you want to put: ");
+            int liters = int.Parse(Console.ReadLine());
+            if (current_fuel_liters + liters > tank_capacity)
             {
                 current_fuel_liters = tank_capacity;
             }
             else
             {
-                current_fuel_liters += fuel_in_liters;
+                current_fuel_liters += liters;
             }
         }
 
@@ -182,7 +706,8 @@ namespace ActivityVehicle
              ***********/
             if(isEngineOn == false)
             {
-                throw new Exception("Please start the engine first");
+                Console.WriteLine("Please start the engine first");
+                return;
             }
             if(EngineType == null)
             {
@@ -191,6 +716,7 @@ namespace ActivityVehicle
             if(current_fuel_liters == 0)
             {
                 Console.WriteLine("Please refuel first");
+                current_speed = 0;
                 return;
             }
             if (is_two_wheeled)
@@ -331,13 +857,13 @@ namespace ActivityVehicle
             Console.WriteLine(String.Format("Current speed is {0} kph.", current_speed));
             Console.WriteLine(String.Format("Total distance travelled is {0:F2} km.", distance_travelled));
             Console.WriteLine(String.Format("Total displacement from origin is {0:F2} km.", disp));
-            Console.WriteLine(String.Format("Total remaining gas is {0:F2}", current_fuel_liters));
+            Console.WriteLine(String.Format("Total remaining gas is {0:F2} liters out of {1:F2} liters.", current_fuel_liters, TankCapacity));
             Console.WriteLine();
 
         }
 
         // An extra feature I wanted to put, just for a little bit of touch
-        public void add_displacement(double displacement)
+        private void add_displacement(double displacement)
         {
             if(current_direction == "North")
             {
@@ -359,11 +885,12 @@ namespace ActivityVehicle
 
     class WaterVehicle : Vehicle
     {
-        protected double fuel_consumption_constant = 0.275; // Based on a 3MPG per 20 knots of travel.
+        protected int number_person_riding = 0;
+        protected double fuel_consumption_constant;
         // CHANGE FCC BASED ON TYPE OF VEHICLE
         protected int current_speed = 0;
-        protected int max_speed = 60; // TODO: Set on actual vehicle
-        protected int minimum_driving_speed = 10; // TODO: Set on actual vehicle
+        protected int max_speed; // TODO: Set on actual vehicle
+        protected int minimum_driving_speed; // TODO: Set on actual vehicle
         protected String current_direction = "North";
         protected double distance_travelled = 0;
         protected double total_displacement = 0;
@@ -373,11 +900,6 @@ namespace ActivityVehicle
         private double south_distance = 0;
         private double east_distance = 0;
         private double west_distance = 0;
-
-        public WaterVehicle()
-        {
-            current_fuel_liters = 150; // TODO: Set on actual vehicle
-        }
 
         public int NumberOfEngine
         {
@@ -439,28 +961,43 @@ namespace ActivityVehicle
                 Console.WriteLine("Engine is already on");
                 return;
             }
+            Console.WriteLine("Engine started.");
             isEngineOn = true;
+            number_person_riding += 1;
         }
 
         public override void stopEngine()
         {
+            if (isEngineOn == false)
+            {
+                Console.WriteLine("Engine is already off.");
+                return;
+            }
+            Console.WriteLine("Engine stopped.");
             isEngineOn = false;
         }
 
-        public override void refuel(int fuel_in_liters)
+        public override void refuel()
         {
             if (!(tank_capacity > 0))
             {
                 throw new Exception("Please initialize the capacity of the tank before refueling");
             }
+            if (isEngineOn == true)
+            {
+                Console.WriteLine("Please turn off engine first");
+                return;
+            }
+            Console.Write("Please say how much fuel you want to put: ");
+            int liters = int.Parse(Console.ReadLine());
 
-            if (current_fuel_liters + fuel_in_liters > tank_capacity)
+            if (current_fuel_liters + liters > tank_capacity)
             {
                 current_fuel_liters = tank_capacity;
             }
             else
             {
-                current_fuel_liters += fuel_in_liters;
+                current_fuel_liters += liters;
             }
         }
 
@@ -484,7 +1021,8 @@ namespace ActivityVehicle
              ***********/
             if (isEngineOn == false)
             {
-                throw new Exception("Please start the engine first");
+                Console.WriteLine("Please start the engine first");
+                return;
             }
             if (!(NumberOfEngine > 0))
             {
@@ -493,6 +1031,7 @@ namespace ActivityVehicle
             if (current_fuel_liters == 0)
             {
                 Console.WriteLine("Please refuel first");
+                current_speed = 0;
                 return;
             }
 
@@ -628,13 +1167,12 @@ namespace ActivityVehicle
             Console.WriteLine(String.Format("Current speed is {0} kph.", current_speed));
             Console.WriteLine(String.Format("Total distance travelled is {0:F2} km.", distance_travelled));
             Console.WriteLine(String.Format("Total displacement from origin is {0:F2} km.", disp));
-            Console.WriteLine(String.Format("Total remaining gas is {0:F2}", current_fuel_liters));
-            Console.WriteLine();
+            Console.WriteLine(String.Format("Total remaining gas is {0:F2} liters out of {1:F2} liters.", current_fuel_liters, TankCapacity));
 
         }
 
         // An extra feature I wanted to put, just for a little bit of touch
-        public void add_displacement(double displacement)
+        private void add_displacement(double displacement)
         {
             if (current_direction == "North")
             {
@@ -659,11 +1197,12 @@ namespace ActivityVehicle
 
     class AerialVehicle : Vehicle
     {
-        protected double fuel_consumption_constant = 4; // Based on a 3MPG per 20 knots of travel.
+        protected double fuel_consumption_constant;
+        protected int number_person_riding;
         // CHANGE FCC BASED ON TYPE OF VEHICLE
         protected int current_speed = 0;
-        protected int max_speed = 800; // TODO: Set on actual vehicle
-        protected int minimum_driving_speed = 240; // TODO: Set on actual vehicle
+        protected int max_speed; // TODO: Set on actual vehicle
+        protected int minimum_driving_speed; // TODO: Set on actual vehicle
         protected String current_direction = "North";
         protected double distance_travelled = 0;
         protected double total_displacement = 0;
@@ -673,11 +1212,6 @@ namespace ActivityVehicle
         private double south_distance = 0;
         private double east_distance = 0;
         private double west_distance = 0;
-
-        public AerialVehicle()
-        {
-            current_fuel_liters = 30000; // TODO: Set on actual vehicle
-        }
 
         public int NumberOfEngine
         {
@@ -739,28 +1273,43 @@ namespace ActivityVehicle
                 Console.WriteLine("Engine is already on");
                 return;
             }
+            Console.WriteLine("Engine started.");
             isEngineOn = true;
         }
 
         public override void stopEngine()
         {
+            if (isEngineOn == false)
+            {
+                Console.WriteLine("Engine is already off.");
+                return;
+            }
             isEngineOn = false;
+            Console.WriteLine("Engine stopped.");
         }
 
-        public override void refuel(int fuel_in_liters)
+        public override void refuel()
         {
             if (!(tank_capacity > 0))
             {
                 throw new Exception("Please initialize the capacity of the tank before refueling");
             }
+            if (isEngineOn == true)
+            {
+                Console.WriteLine("Please turn off engine first");
+                return;
+            }
 
-            if (current_fuel_liters + fuel_in_liters > tank_capacity)
+            Console.Write("Please say how much fuel you want to put: ");
+            int liters = int.Parse(Console.ReadLine());
+
+            if (current_fuel_liters + liters > tank_capacity)
             {
                 current_fuel_liters = tank_capacity;
             }
             else
             {
-                current_fuel_liters += fuel_in_liters;
+                current_fuel_liters += liters;
             }
         }
 
@@ -784,7 +1333,8 @@ namespace ActivityVehicle
              ***********/
             if (isEngineOn == false)
             {
-                throw new Exception("Please start the engine first");
+                Console.WriteLine("Please start the engine first");
+                return;
             }
             if (!(NumberOfEngine > 0))
             {
@@ -793,6 +1343,7 @@ namespace ActivityVehicle
             if (current_fuel_liters == 0)
             {
                 Console.WriteLine("Please refuel first");
+                current_speed = 0;
                 return;
             }
 
@@ -927,13 +1478,13 @@ namespace ActivityVehicle
             Console.WriteLine(String.Format("Current speed is {0} kph.", current_speed));
             Console.WriteLine(String.Format("Total distance travelled is {0:F2} km.", distance_travelled));
             Console.WriteLine(String.Format("Total displacement from origin is {0:F2} km.", disp));
-            Console.WriteLine(String.Format("Total remaining gas is {0:F2}", current_fuel_liters));
+            Console.WriteLine(String.Format("Total remaining gas is {0:F2} liters out of {1:F2} liters.", current_fuel_liters, TankCapacity));
             Console.WriteLine();
 
         }
 
         // An extra feature I wanted to put, just for a little bit of touch
-        public void add_displacement(double displacement)
+        private void add_displacement(double displacement)
         {
             if (current_direction == "North")
             {
@@ -963,13 +1514,14 @@ namespace ActivityVehicle
 
         // constructor
 
-        public TwoWheeledVehicle(string color = "Black", int price = 80000, int tank_capacity = 12, int max_speed = 100, int minimum_driving_speed = 10)
+        public TwoWheeledVehicle(string color = "Black", int price = 80000, string engineType = "manual")
         {
             Color = color;
             Price = price;
-            this.max_speed = max_speed;
-            this.minimum_driving_speed = minimum_driving_speed;
-            TankCapacity = tank_capacity;
+            EngineType = engineType;
+            max_speed = 100;
+            minimum_driving_speed = 10;
+            TankCapacity = 12;
             SeatCapacity = 3;
             fuel_consumption_constant = 0.02;
             is_two_wheeled = true;
@@ -983,10 +1535,21 @@ namespace ActivityVehicle
                 Console.WriteLine("Vehicle is already full");
                 return;
             }
+            Console.WriteLine("Passenger added");
             number_person_riding += 1;
         }
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Two-Wheeled"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
+        }
     }
-
+    // TODO: ENGINE TYPE
     class FourWheeledVehicle : WheeledVehicle
     {
         // TODO: Create constructor
@@ -994,13 +1557,14 @@ namespace ActivityVehicle
 
         // constructor
 
-        public FourWheeledVehicle(string color = "Black", int price = 80000, int tank_capacity = 50, int max_speed = 100, int minimum_driving_speed = 10)
+        public FourWheeledVehicle(string color = "Black", int price = 500000, string engine_type = "manual")
         {
+            EngineType = engine_type;
             Color = color;
             Price = price;
-            this.max_speed = max_speed;
-            this.minimum_driving_speed = minimum_driving_speed;
-            TankCapacity = tank_capacity;
+            max_speed = 100;
+            minimum_driving_speed = 10;
+            TankCapacity = 50;
             SeatCapacity = 6;
             fuel_consumption_constant = 0.093;
             is_two_wheeled = true;
@@ -1013,8 +1577,201 @@ namespace ActivityVehicle
                 Console.WriteLine("Vehicle is already full");
                 return;
             }
+            Console.WriteLine("Passenger added");
             number_person_riding += 1;
+        }
+
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Four-Wheeled"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
         }
     }
 
+    class Submarine : WaterVehicle
+    {
+        // TODO: Create constructor
+        // TODO: Change FCC, max speed, min speed, current fuel liters
+        // price is over $400 million, default will be 20 billion pesos
+        // constructor
+
+        public Submarine(string color = "Black", int price = 2000000000)
+        {
+            Color = color;
+            Price = price;
+            NumberOfEngine = 1; // most submarines have 1 engine
+            max_speed = 60;
+            minimum_driving_speed = 10;
+            TankCapacity = 17500;
+            SeatCapacity = 50;
+            fuel_consumption_constant = 40;
+            current_fuel_liters = TankCapacity / 3;
+        }
+
+        public void addPassenger()
+        {
+            if (number_person_riding == SeatCapacity)
+            {
+                Console.WriteLine("Vehicle is already full");
+                return;
+            }
+            Console.WriteLine("Passenger added");
+            number_person_riding += 1;
+        }
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Submarine"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
+        }
+    }
+
+    class Yacht : WaterVehicle
+    {
+        // TODO: Create constructor
+        // TODO: Change FCC, max speed, min speed, current fuel liters
+        // price averages around $500k, defaults to 25 million pesos
+        // constructor
+
+        public Yacht(string color = "Black", int price = 25000000)
+        {
+            Color = color;
+            Price = price;
+            NumberOfEngine = 2; // most submarines have 2 engines
+            max_speed = 40;
+            minimum_driving_speed = 10;
+            TankCapacity = 12500;
+            SeatCapacity = 8;
+            fuel_consumption_constant = 28;
+            current_fuel_liters = TankCapacity / 3;
+        }
+
+        public void addPassenger()
+        {
+            if (number_person_riding == SeatCapacity)
+            {
+                Console.WriteLine("Vehicle is already full");
+                return;
+            }
+            Console.WriteLine("Passenger added");
+            number_person_riding += 1;
+        }
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Yacht"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
+        }
+    }
+
+    class Helicopter : AerialVehicle
+    {
+        // TODO: Create constructor
+        // TODO: Change FCC, max speed, min speed, current fuel liters
+        // price averages around $1.5 million, defaults to 75 million pesos
+        // constructor
+
+        public Helicopter(string color = "Black", int price = 75000000)
+        {
+            NumberOfEngine = 3; // default number of engines in helicopters is 3
+            Color = color;
+            Price = price;
+            max_speed = 300;
+            minimum_driving_speed = 30;
+            TankCapacity = 100; 
+            SeatCapacity = 12;
+            fuel_consumption_constant = 0.18;
+            current_fuel_liters = TankCapacity / 3;
+        }
+
+        public void addPassenger()
+        {
+            if (number_person_riding == SeatCapacity)
+            {
+                Console.WriteLine("Vehicle is already full");
+                return;
+            }
+            Console.WriteLine("Passenger added");
+            number_person_riding += 1;
+        }
+
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Helicopter"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
+        }
+    }
+
+    class Airlines : AerialVehicle
+    {
+        // TODO: Create constructor
+        // TODO: Change FCC, max speed, min speed, current fuel liters
+        // a commercial airplane price averages around $40million, defaults to 2 billion pesos
+        // constructor
+
+        public Airlines(string color = "White", int price = 2000000000)
+        {
+            NumberOfEngine = 4; // default number of engine for planes is 4
+            Color = color;
+            Price = price;
+            max_speed = 800;
+            minimum_driving_speed = 100;
+            TankCapacity = 5000; 
+            SeatCapacity = 400;
+            fuel_consumption_constant = 10;
+            current_fuel_liters = TankCapacity / 3;
+        }
+
+        public void addPassenger()
+        {
+            if (number_person_riding == SeatCapacity)
+            {
+                Console.WriteLine("Vehicle is already full");
+                return;
+            }
+
+            Console.WriteLine("How many passengers will be onboarding?");
+            int onboarding_passenger = int.Parse(Console.ReadLine());
+
+            if (number_person_riding + onboarding_passenger >= SeatCapacity)
+            {
+                Console.WriteLine("Vehicle is full after last onboarding passenger.");
+                number_person_riding = SeatCapacity;
+            }
+            else
+            {
+                Console.WriteLine("Passenger added");
+                number_person_riding += number_person_riding;
+            }
+        }
+
+        public void printSpecs()
+        {
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(String.Format("Vehicle: Airline"));
+            Console.WriteLine(String.Format("Color: {0}", Color));
+            Console.WriteLine(String.Format("Price: {0}", Price));
+            Console.WriteLine(String.Format("Seat Capacity: {0}", SeatCapacity));
+            Console.WriteLine(String.Format("Number of people riding: {0}", number_person_riding));
+            Console.WriteLine("---------------------------\n");
+        }
+    }
 }
