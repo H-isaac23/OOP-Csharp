@@ -9,8 +9,6 @@ namespace ActivityVehicle
     /*
      I made it so that there will be exceptions thrown if there are logical errors.
      This will stop the program completely to throw the exception if needed.
-     Example:
-     -driving a vehicle without starting the engine first
 
     P.S. The program is over a thousand lines, done over the course of 3 days. Sorry if it's a little bit too much 人(_ _*)
      */
